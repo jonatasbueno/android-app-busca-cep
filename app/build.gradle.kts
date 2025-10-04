@@ -46,6 +46,10 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    // add to me
-    implementation("com.squareup.retrofit2:retrofit:3.1.0-SNAPSHOT")
+    /*
+    * Libs adicionadas por mim
+    *
+    * Aqui a string referente a lib retrofit fica armazenada no arquivo "libs.versions.toml"
+    * */
+    implementation(libs.retrofit)
 }
