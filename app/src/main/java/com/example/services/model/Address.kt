@@ -1,11 +1,11 @@
 package com.example.services.model
 
-data class Address (
-    private val cep: String,
-    private val state: String,
-    private val city: String,
-    private val neighborhood: String,
-    private val street: String,
-    private val complement: String,
-    private val ibge: String
+data class Address(
+  val cep: String,
+  val state: String,
+  val city: String,
+  val neighborhood: String,
+  val street: String,
+  val complement: String,
+  val ibge: String,
 )

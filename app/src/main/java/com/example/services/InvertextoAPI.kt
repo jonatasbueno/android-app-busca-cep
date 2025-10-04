@@ -1,14 +1,14 @@
-  package com.example.services
+package com.example.services
 
-  import com.example.services.model.Address
-  import retrofit2.http.GET
-  import retrofit2.http.Path
-  import retrofit2.http.Query
+import com.example.services.model.Address
+import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
-  interface InvertextoAPI {
-    @GET("vi/cep/{cep}")
-    suspend fun getAddress(
-      @Path("cep") cep: String,
-      @Query("token") token: String
-    ): Address
-  }
+interface InvertextoAPI {
+  @GET("v1/cep/{cep}")
+  suspend fun getAddress(
+    @Path("cep") cep: String,
+    @Query("token") token: String,
+  ): Address
+}
