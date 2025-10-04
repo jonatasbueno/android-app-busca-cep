@@ -51,5 +51,11 @@ dependencies {
     *
     * Aqui a string referente a lib retrofit fica armazenada no arquivo "libs.versions.toml"
     * */
+
+    // http request
     implementation(libs.retrofit)
+    // conversor gson para retrofit
+    implementation(libs.converter.gson)
+    implementation(libs.gson)
+
 }
