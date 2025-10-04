@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">services</string>
+    <string name="logo">logo</string>
+    <string name="digite_o_cep_para_buscar_o_endere_o">Digite o CEP para buscar o endereço</string>
+    <string name="buscar">Buscar</string>
+    <string name="informacoes">Informações</string>
+</resources>
