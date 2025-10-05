@@ -1,4 +1,6 @@
 package com.example.services
 
-val URL = "https://api.invertexto.com/"
-val TOKEN = "22067|kQDFBfsbJemz2UKJYk55wqF3DVU4Orsm"
+object Constants {
+  const val API_TOKEN = BuildConfig.API_TOKEN
+  const val URL = "https://api.invertexto.com/"
+}

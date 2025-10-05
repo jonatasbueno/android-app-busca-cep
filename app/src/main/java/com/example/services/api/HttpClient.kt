@@ -1,5 +1,6 @@
 package com.example.services.api
 
+import com.example.services.Constants.URL
 import com.example.services.InvertextoAPI
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -9,7 +10,7 @@ object HttpClient {
   // Singleton
   private val retrofit by lazy {
     Retrofit.Builder()
-      .baseUrl("https://api.invertexto.com/")
+      .baseUrl(URL)
       // converte JSON com a lib GSON
       .addConverterFactory(GsonConverterFactory.create())
       .build()

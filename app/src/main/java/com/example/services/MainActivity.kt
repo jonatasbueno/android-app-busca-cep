@@ -35,18 +35,41 @@ class MainActivity : AppCompatActivity() {
     buttonSearchRef.setOnClickListener {
       val cep = editTextCep.text.toString()
 
-      searchAddress(cep)
+      searchAddressAndName(cep)
     }
 
   }
 
-  private fun searchAddress(cep: String) {
-    lifecycleScope.launch {
-      try {
-        val response = HttpClient.api.getAddress(cep, TOKEN)
+  private fun buttonIsEnabled() {
+    buttonSearchRef.isEnabled = true
+    buttonSearchRef.text = "Buscar"
+  }
 
-        textViewInfo.text = response.toString()
+  private fun searchAddressAndName(cep: String) {
+    buttonSearchRef.isEnabled = false
+    buttonSearchRef.text = "Buscando..."
+
+    lifecycleScope.launch {
+      val httpClient = HttpClient.api
+
+      try {
+        val responseAddress = httpClient.getAddress(cep)
+        val responseName = httpClient.getName()
+
+        textViewInfo.text = buildString {
+          append("Endereço: ")
+          append(responseAddress.street)
+          append(", ")
+          append(responseAddress.neighborhood)
+          append(", ")
+          append(responseAddress.city)
+          append("\nNome de alguém: ")
+          append(responseName.name)
+        }
+
+        buttonIsEnabled()
       } catch (error: Exception) {
+        buttonIsEnabled()
         Toast.makeText(
           this@MainActivity,
           "Erro ao buscar endereço!$error",
